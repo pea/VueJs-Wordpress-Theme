@@ -1,0 +1,11 @@
+{
+    "name": "peter/vue-theme-browserify",
+    "require": {
+        "phroute/phroute": "^2.1"
+    },
+    "autoload": {
+        "files": [
+          "Common/routes.php"
+        ]
+    }
+}
