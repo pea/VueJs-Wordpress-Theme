@@ -4,16 +4,13 @@
       Loading
     </div>
     <div v-if="dataReady">
-      <h1>Wordpress Vue.js Server-Side Redering</h1>
-      <div class="grid gut40 outergut">
-        <div class="col perc20" v-for="post in posts.data">
-          <div class="item">
-            <router-link :to="{ path: `post/${post.slug}` }">
-              <div class="title">{{ post.title }}</div>
-            </router-link>
-          </div>
-        </div>
-      </div>
+      <ul>
+        <li v-for="post in posts.data">
+          <router-link :to="{ path: `post/${post.slug}` }">
+            {{ post.title }}
+          </router-link>
+        </li>
+      </ul>
     </div>
   </div>
 </template>

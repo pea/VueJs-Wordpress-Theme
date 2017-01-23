@@ -8,7 +8,7 @@
 <body>
     <div id="app"></div>
     <noscript>
-        <?php include('views/'.$pageType.'-fallback.php'); ?>
+        <?php include('views/'.$route['pageType'].'-fallback.php'); ?>
     </noscript>
     <script src="<?= get_template_directory_uri() ?>/dist/build.js"></script>
 </body>

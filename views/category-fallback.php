@@ -1,14 +1,15 @@
 <h1>Category</h1>
 <?php
-$matcher = new Weew\UrlMatcher\UrlMatcher();
-$urlPath = parse_url($_SERVER['REQUEST_URI'])['path'];
-$dictionary = $matcher->parse('category/{any}', $urlPath);
-$category = $dictionary->get('any');
+
+if (!term_exists($route['slug'], 'category')) {
+    include('404-fallback.php');
+    return;
+}
 
 $wpQuery = new WP_Query([
     'post_type' => 'post',
     'posts_per_page' => get_option('posts_per_page'),
-    'category_name' => $category,
+    'category_name' => $route['slug'],
     'paged' => (get_query_var('paged')) ? get_query_var('paged') : 1
 ]);
 
